@@ -4,6 +4,8 @@ import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:flutter_chat_bubble/clippers/chat_bubble_clipper_1.dart';
 import 'package:get/get.dart';
 import 'package:getx_bmi/modules/detail/detail_controller.dart';
+import 'package:getx_bmi/modules/home/home_screen.dart';
+import 'package:getx_bmi/routes/app_pages.dart';
 class DetailScreen extends GetView<DetailController> {
   const DetailScreen({super.key});
 
@@ -107,7 +109,7 @@ class DetailScreen extends GetView<DetailController> {
           ),
           GestureDetector(
             onTap: () {
-              Get.back();
+              Get.toNamed(Routes.HOME);
             },
             child: Container(
               alignment: Alignment.center,
@@ -118,8 +120,8 @@ class DetailScreen extends GetView<DetailController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 6),
-                    child: Icon(
+                    margin: const EdgeInsets.only(right: 6),
+                    child: const Icon(
                       Icons.refresh,
                       color: Colors.white,
                       size: 20,

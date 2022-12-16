@@ -32,7 +32,7 @@ class HomeScreen extends GetView<HomeController> {
                   Container(
                     width: double.infinity,
                     alignment: Alignment.bottomLeft,
-                    child: const  Text(
+                    child: const Text(
                       "your current BMI",
                       style: TextStyle(
                           color: Color(0xff484848),
@@ -103,8 +103,8 @@ class HomeScreen extends GetView<HomeController> {
                       height: 50,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(40),
-                          border:
-                              Border.all(color: const Color(0xffE2E2E2), width: 2)),
+                          border: Border.all(
+                              color: const Color(0xffE2E2E2), width: 2)),
                       child: const Center(
                         child: Text(
                           "Male",
@@ -120,8 +120,8 @@ class HomeScreen extends GetView<HomeController> {
                       height: 50,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(40),
-                          border:
-                              Border.all(color: const Color(0xffE2E2E2), width: 2)),
+                          border: Border.all(
+                              color: const Color(0xffE2E2E2), width: 2)),
                       child: const Center(
                         child: Text(
                           "Other",
@@ -136,37 +136,23 @@ class HomeScreen extends GetView<HomeController> {
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 40),
               child: Column(
                 children: [
-                  SizedBox(
+                  Container(
                     width: 350,
-                    height: 70,
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(3),
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
-                      // maxLines: ,
-                      // controller: _controller,
-                      decoration: const InputDecoration(
-                        label: Text.rich(TextSpan(children: <InlineSpan>[
-                          WidgetSpan(
-                              child: Text(
-                            'Age',
-                            style: TextStyle(
-                              color: Color(0xffC4C4C4),
-                            ),
-                          ))
-                        ])),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                      width: 350,
-                      height: 70,
+                    height: 65,
+                    margin: const EdgeInsets.only(bottom: 20),
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Center(
                       child: TextField(
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 25,
+                            fontWeight: FontWeight.w600),
+                        //scrollPadding: EdgeInsets.only(left: 30),
                         keyboardType: TextInputType.number,
                         inputFormatters: [
                           LengthLimitingTextInputFormatter(3),
@@ -178,23 +164,27 @@ class HomeScreen extends GetView<HomeController> {
                           }
                         },
                         // controller: _controller,
-                        decoration: const InputDecoration(
-                          label: Text.rich(TextSpan(children: <InlineSpan>[
-                            WidgetSpan(
-                                child: Text(
-                              'Height',
-                              style: TextStyle(
-                                color: Color(0xffC4C4C4),
-                              ),
-                            ))
-                          ])),
-                        ),
+                        decoration: InputDecoration(
+                            hintText: 'Height',
+                            hintStyle: TextStyle(color: Colors.grey.shade300,fontSize: 22),
+                            border: InputBorder.none,
+                            contentPadding:
+                                const EdgeInsets.symmetric(horizontal: 10)),
                       ),
                     ),
-                  SizedBox(
-                      width: 350,
-                      height: 70,
+                  ),
+                  Container(
+                    width: 350,
+                    height: 65,
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Center(
                       child: TextField(
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 25,
+                            fontWeight: FontWeight.w600),
                         keyboardType: TextInputType.number,
                         inputFormatters: [
                           LengthLimitingTextInputFormatter(3),
@@ -202,23 +192,18 @@ class HomeScreen extends GetView<HomeController> {
                         ],
                         onChanged: (value) {
                           if (value.isNotEmpty) {
-                            controller.weight.value = double.parse(value);  
+                            controller.weight.value = double.parse(value);
                           }
                         },
-                        decoration: const InputDecoration(
-                          label: Text.rich(TextSpan(children: <InlineSpan>[
-                            WidgetSpan(
-                                child: Text(
-                              'Weight',
-                              style: TextStyle(
-                                color: Color(0xffC4C4C4),
-                              ),
-                            ))
-                          ])),
-                        ),
+                        decoration: InputDecoration(
+                            hintText: 'Weight',
+                            hintStyle: TextStyle(color: Colors.grey.shade300,fontSize: 22),
+                            border: InputBorder.none,
+                            contentPadding:
+                                const EdgeInsets.symmetric(horizontal: 10)),
                       ),
                     ),
-                  
+                  ),
                 ],
               ),
             ),
@@ -226,11 +211,11 @@ class HomeScreen extends GetView<HomeController> {
               onTap: () => controller.isBMIControl(),
               child: Container(
                 alignment: Alignment.bottomCenter,
-                margin: EdgeInsets.only(top: 180),
+                margin: const EdgeInsets.only(top: 220),
                 width: 320,
                 height: 50,
                 decoration: BoxDecoration(
-                    color: Color(0xff468FF8),
+                    color: const Color(0xff468FF8),
                     borderRadius: BorderRadius.circular(40)),
                 child: const Center(
                     child: Text(

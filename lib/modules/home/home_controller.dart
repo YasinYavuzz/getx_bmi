@@ -37,7 +37,7 @@ class HomeController extends GetxController {
   }
 
   void isBMIControl() {
-    if (!(weight.value > 40 && weight.value < 250)) {
+    if (!(weight.value >= 40 && weight.value <= 250)) {
       Get.dialog(
         AlertDialog(
           backgroundColor: Colors.red,
@@ -52,7 +52,7 @@ class HomeController extends GetxController {
           ],
         ),
       );
-    } else if (!(height.value > 100 && height.value < 210)) {
+    } else if (!(height.value >= 100 && height.value <= 210)) {
       Get.dialog(
         AlertDialog(
           backgroundColor: Colors.red,
@@ -69,6 +69,7 @@ class HomeController extends GetxController {
       );
     } else {
       bmiCalculator();
+      // Get.toNamed(Routes.DETAIL,parameters: {'bmiScore' : bmiScore.value, 'statusValue' : statusValue, 'textValue' : textValue, 'statusColor' : statusColor.value.toString()});
       Get.toNamed(Routes.DETAIL,parameters: {'bmiScore' : bmiScore.value, 'statusValue' : statusValue, 'textValue' : textValue, 'statusColor' : statusColor.value.toString()});
     }
   }
