@@ -43,7 +43,7 @@ class DetailScreen extends GetView<DetailController> {
                 Container(
                   margin: const EdgeInsets.only(top: 15),
                   child: Text(
-                    controller.bmiScore!.substring(0,2),
+                    controller.bmiScore!.substring(0,4),
                     style: const TextStyle(
                         color: Color(0xff66CFA6),
                         fontWeight: FontWeight.bold,

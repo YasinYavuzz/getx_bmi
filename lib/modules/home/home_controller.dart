@@ -40,7 +40,8 @@ class HomeController extends GetxController {
     if (!(weight.value > 40 && weight.value < 250)) {
       Get.dialog(
         AlertDialog(
-          title: const Text('Kilo : 40 - 250 değerleri arasında olmalı'),
+          backgroundColor: Colors.red,
+          title: const Text('Kilo : 40 - 250 değerleri arasında olmalı',style: TextStyle(color: Colors.white),),
           actions: <Widget>[
             ElevatedButton(
               child: const Text("OK"),
@@ -54,7 +55,8 @@ class HomeController extends GetxController {
     } else if (!(height.value > 100 && height.value < 210)) {
       Get.dialog(
         AlertDialog(
-          title: const Text('Boy : 100 - 210 değerleri arasında olmalı'),
+          backgroundColor: Colors.red,
+          title: const Text('Boy : 100 - 210 değerleri arasında olmalı',style: TextStyle(color: Colors.white)),
           actions: <Widget>[
             ElevatedButton(
               child: const Text("OK"),
